@@ -1,0 +1,84 @@
+2019-02-27 10:57:40,433 ERROR: Exception on /database [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1236, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.ProgrammingError: (1146, "Table 'pia.user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\Users\celia\microblog - Copie\app\main\routes.py", line 17, in before_request
+    if current_user.is_authenticated:
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "C:\Users\celia\microblog - Copie\app\models.py", line 83, in load_user
+    return User.query.get(int(id))
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 936, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 282, in load_on_pk_identity
+    return q.one()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3039, in one
+    ret = self.one_or_none()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3008, in one_or_none
+    ret = list(self)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3081, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3106, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 980, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 273, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1099, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1240, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1458, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 296, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 276, in reraise
+    raise value.with_traceback(tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1236, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.ProgrammingError: (MySQLdb._exceptions.ProgrammingError) (1146, "Table 'pia.user' doesn't exist") [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.id = %s'] [parameters: (7,)] (Background on this error at: http://sqlalche.me/e/f405)

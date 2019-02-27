@@ -1,0 +1,276 @@
+# Translations template for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-02-26 21:55+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: app/__init__.py:18
+msgid "Merci de se connecter pour accéder à cette page."
+msgstr ""
+
+#: app/translate.py:10
+msgid "Error: the translation service is not configured."
+msgstr ""
+
+#: app/translate.py:18
+msgid "Error: the translation service failed."
+msgstr ""
+
+#: app/auth/email.py:8
+msgid "[PIA Chatbot] Reset Your Password"
+msgstr ""
+
+#: app/auth/forms.py:9 app/auth/forms.py:16 app/main/forms.py:10
+msgid "Nom d'utilisateur"
+msgstr ""
+
+#: app/auth/forms.py:10 app/auth/forms.py:18 app/auth/forms.py:41
+msgid "Mot de passe"
+msgstr ""
+
+#: app/auth/forms.py:11
+msgid "Se souvenir de moi"
+msgstr ""
+
+#: app/auth/forms.py:12 app/auth/routes.py:28 app/templates/auth/login.html:5
+#: app/templates/base.html:26
+msgid "Connexion"
+msgstr ""
+
+#: app/auth/forms.py:17 app/auth/forms.py:36
+msgid "Email"
+msgstr ""
+
+#: app/auth/forms.py:20 app/auth/forms.py:43
+msgid "Répéter le mot de passe"
+msgstr ""
+
+#: app/auth/forms.py:22
+msgid "S'inscrire"
+msgstr ""
+
+#: app/auth/forms.py:27
+msgid "Merci de choisir un nom d'utilisateur différent."
+msgstr ""
+
+#: app/auth/forms.py:32
+msgid "Merci de choisir une adresse email différente."
+msgstr ""
+
+#: app/auth/forms.py:37 app/auth/forms.py:45
+msgid "Réinitialiser le mot de passe"
+msgstr ""
+
+#: app/auth/routes.py:21
+msgid "Nom d'utilisateur ou mot de passe invalide."
+msgstr ""
+
+#: app/auth/routes.py:47
+msgid "Félicitations, tu fais maintenant partie de notre grande famille !"
+msgstr ""
+
+#: app/auth/routes.py:49 app/templates/auth/register.html:5
+msgid "Inscription"
+msgstr ""
+
+#: app/auth/routes.py:63
+msgid ""
+"Jette un coup d'oeil à tes emails et suis les instructions de "
+"réinitialisation de ton mot de passe."
+msgstr ""
+
+#: app/auth/routes.py:66 app/templates/auth/reset_password_request.html:5
+msgid "Réinitialisation du mot de passe"
+msgstr ""
+
+#: app/auth/routes.py:80
+msgid "Ton mot de passe a été réinitialisé."
+msgstr ""
+
+#: app/main/forms.py:11
+msgid "À propos de moi"
+msgstr ""
+
+#: app/main/forms.py:13
+msgid "Soumettre"
+msgstr ""
+
+#: app/main/forms.py:23
+msgid "Merci d'utiliser un nom d'utilisateur différent."
+msgstr ""
+
+#: app/main/forms.py:27
+msgid "Dis moi quelque chose..."
+msgstr ""
+
+#: app/main/forms.py:28
+msgid "Envoyer"
+msgstr ""
+
+#: app/main/routes.py:35
+msgid "On va essayer d'afficher la BDD"
+msgstr ""
+
+#: app/main/routes.py:38
+msgid "Message envoyé !"
+msgstr ""
+
+#: app/main/routes.py:47 app/templates/base.html:21
+msgid "Accueil"
+msgstr ""
+
+#: app/main/routes.py:61
+msgid "Explore"
+msgstr ""
+
+#: app/main/routes.py:89
+msgid "Les modifications ont été prises en compte."
+msgstr ""
+
+#: app/main/routes.py:94 app/templates/edit_profile.html:5
+#: app/templates/user.html:15
+msgid "Editer le profil"
+msgstr ""
+
+#: app/main/routes.py:103 app/main/routes.py:119
+#, python-format
+msgid "Utilisateur %(username)s inconnu."
+msgstr ""
+
+#: app/main/routes.py:106
+msgid "Tu ne peux pas te follow toi-même !"
+msgstr ""
+
+#: app/main/routes.py:110
+#, python-format
+msgid "Tu follow %(username)s !"
+msgstr ""
+
+#: app/main/routes.py:122
+msgid "Tu ne peux pas te unfollow toi-même !"
+msgstr ""
+
+#: app/main/routes.py:126
+#, python-format
+msgid "Tu ne follow pas %(username)s."
+msgstr ""
+
+#: app/templates/_post.html:14
+#, python-format
+msgid "%(username)s <br> %(when)s"
+msgstr ""
+
+#: app/templates/_post.html:25
+msgid "Translate"
+msgstr ""
+
+#: app/templates/base.html:4
+msgid "Welcome to PIA Chatbot"
+msgstr ""
+
+#: app/templates/base.html:22
+msgid "Exploration"
+msgstr ""
+
+#: app/templates/base.html:28
+msgid "Profil"
+msgstr ""
+
+#: app/templates/base.html:29
+msgid "Déconnexion"
+msgstr ""
+
+#: app/templates/base.html:66
+msgid "Error: Could not contact server."
+msgstr ""
+
+#: app/templates/index.html:5
+#, python-format
+msgid "Bonjour, %(username)s !"
+msgstr ""
+
+#: app/templates/index.html:17 app/templates/user.html:31
+msgid "Posts plus récents"
+msgstr ""
+
+#: app/templates/index.html:22 app/templates/user.html:36
+msgid "Posts plus anciens"
+msgstr ""
+
+#: app/templates/user.html:8
+msgid "Utilisateur "
+msgstr ""
+
+#: app/templates/user.html:11
+msgid "Dernière activité "
+msgstr ""
+
+#: app/templates/user.html:13
+#, python-format
+msgid "%(count)d followers"
+msgstr ""
+
+#: app/templates/user.html:13
+#, python-format
+msgid "%(count)d following"
+msgstr ""
+
+#: app/templates/user.html:17
+msgid "Follow"
+msgstr ""
+
+#: app/templates/user.html:19
+msgid "Unfollow"
+msgstr ""
+
+#: app/templates/auth/login.html:12
+msgid "Nouvel utilisateur ?"
+msgstr ""
+
+#: app/templates/auth/login.html:12
+msgid "Clique pour nous rejoindre !"
+msgstr ""
+
+#: app/templates/auth/login.html:14
+msgid "Mot de passe oublié ?"
+msgstr ""
+
+#: app/templates/auth/login.html:15
+msgid "Clique pour le réinitialiser."
+msgstr ""
+
+#: app/templates/auth/reset_password.html:5
+msgid "Reset Your Password"
+msgstr ""
+
+#: app/templates/errors/404.html:4
+msgid "Erreur 404 : Destination non trouvée."
+msgstr ""
+
+#: app/templates/errors/404.html:5 app/templates/errors/500.html:6
+msgid "Retour"
+msgstr ""
+
+#: app/templates/errors/500.html:4
+msgid "Une erreur inattendue s'est produite ! :( "
+msgstr ""
+
+#: app/templates/errors/500.html:5
+msgid ""
+"L'administrateur en a été averti. Nous faisons de notre mieux pour "
+"corriger ce désagrément."
+msgstr ""
+

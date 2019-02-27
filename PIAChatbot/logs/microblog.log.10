@@ -1,0 +1,128 @@
+2019-02-24 12:29:44,625 ERROR: Exception on /index [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1171, in _execute_context
+    context = constructor(dialect, self, conn, *args)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 703, in _init_compiled
+    param.append(processors[key](compiled_params[key]))
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\dialects\sqlite\base.py", line 632, in process
+    "SQLite DateTime type only accepts Python "
+TypeError: SQLite DateTime type only accepts Python datetime and date objects as input.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\Users\celia\microblog\app\routes.py", line 87, in before_request
+    db.session.commit()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1023, in commit
+    self.transaction.commit()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 487, in commit
+    self._prepare_impl()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 466, in _prepare_impl
+    self.session.flush()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2436, in flush
+    self._flush(objects)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2574, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 67, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 277, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2534, in _flush
+    flush_context.execute()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 416, in execute
+    rec.execute(self)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 583, in execute
+    uow,
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
+    update,
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 976, in _emit_update_statements
+    statement, multiparams
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 980, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 273, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1099, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1174, in _execute_context
+    e, util.text_type(statement), parameters, None, None
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1458, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 296, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 276, in reraise
+    raise value.with_traceback(tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1171, in _execute_context
+    context = constructor(dialect, self, conn, *args)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 703, in _init_compiled
+    param.append(processors[key](compiled_params[key]))
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\dialects\sqlite\base.py", line 632, in process
+    "SQLite DateTime type only accepts Python "
+sqlalchemy.exc.StatementError: (builtins.TypeError) SQLite DateTime type only accepts Python datetime and date objects as input. [SQL: 'UPDATE user SET last_seen=? WHERE user.id = ?'] [parameters: [{'last_seen': 'February 24 2019 - 11:29:44', 'user_id': 1}]]
+2019-02-24 12:29:52,041 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:42]
+2019-02-24 12:32:17,423 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:42]
+2019-02-24 12:32:20,084 ERROR: Exception on /index [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\microblog\app\routes.py", line 20, in index
+    user = User.query.filter_by(username=username).first_or_404()
+NameError: name 'username' is not defined
+2019-02-24 12:33:04,514 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:42]
+2019-02-24 12:33:52,561 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:42]
+2019-02-24 12:33:55,031 ERROR: Exception on /index [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\microblog\app\routes.py", line 20, in index
+    user = {'username': user}
+UnboundLocalError: local variable 'user' referenced before assignment
+2019-02-24 12:34:51,544 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:42]
+2019-02-24 12:35:04,423 ERROR: Exception on /index [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: index() missing 1 required positional argument: 'username'

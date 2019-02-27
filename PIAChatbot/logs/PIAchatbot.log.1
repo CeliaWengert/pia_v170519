@@ -1,0 +1,132 @@
+2019-02-27 12:11:26,594 ERROR: Exception on /index [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\celia\microblog - Copie\app\main\routes.py", line 41, in index
+    return redirect(url_for('results'))
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'results'. Did you mean 'auth.register' instead?
+2019-02-27 12:12:28,734 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 12:12:39,575 ERROR: Exception on /index [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\celia\microblog - Copie\app\main\routes.py", line 41, in index
+    return redirect(url_for('main.results'))
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main.results'. Did you mean 'main.user' instead?
+2019-02-27 12:13:52,282 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 12:16:05,610 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 12:42:51,673 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 12:43:04,385 ERROR: Exception on /results [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\microblog - Copie\app\main\routes.py", line 133, in results
+    cur = con.cursor()
+NameError: name 'con' is not defined
+2019-02-27 12:51:44,961 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 12:52:05,356 ERROR: Exception on /results [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\microblog - Copie\app\main\routes.py", line 133, in results
+    cursor = conn.cursor()
+NameError: name 'conn' is not defined
+2019-02-27 12:53:41,702 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 12:53:53,751 ERROR: Exception on /results [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\microblog - Copie\app\main\routes.py", line 133, in results
+    conn = mysql.connector.connect(db)
+  File "c:\users\celia\microblog\venv\lib\site-packages\mysql\connector\__init__.py", line 172, in connect
+    return CMySQLConnection(*args, **kwargs)
+TypeError: __init__() takes 1 positional argument but 2 were given
+2019-02-27 13:01:49,854 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:01:56,006 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:04:40,610 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:05:20,420 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:05:52,990 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:07:51,373 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:10:06,056 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:12:34,724 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:14:14,512 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:16:57,869 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:17:42,894 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:19:33,591 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:20:37,072 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:21:03,460 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+2019-02-27 13:21:20,776 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]

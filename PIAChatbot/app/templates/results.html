@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<html>
+    <head>
+        <title>PIA Chatbot Database</title>
+    </head>
+    <body>
+	    <h1>PIA Chatbot Database</h1>
+		</br>
+		<h2>Table user</h2>
+		</br>
+        {% for item in value %}
+        <tr>
+            <td>Identifiant : {{item[0]}}</td></br>
+            <td>Nom d'utilisateur : {{item[1]}}</td></br>
+            <td>Adresse mail : {{item[2]}}</td></br>
+            <!-- <td>Mot de passe crypté : {{item[3]}}</td></br> -->
+            <td>Description : {{item[4]}}</td></br>
+            <td>Dernière activité : {{item[5]}}</td></br>
+			</br></br>
+        </tr>
+		{% endfor %}
+		<p><a href="{{ url_for('main.index') }}">{{ _('Retour') }}</a></p>
+		{{value_post}}
+    </body>
+</html>
+
+{% endblock %}
