@@ -11,9 +11,8 @@
                         {{ post.author.username }}
                     </a>
                 {% endset %}
-                {{ _('%(username)s <br> %(when)s',
-                    username=user_link, when=moment(post.timestamp).fromNow()) }}
-                <br>
+                <i>{{ _('%(username)s, %(when)s',username=user_link, when=moment(post.timestamp).fromNow())}} :</i>
+                <br><br>
                 <span id="post{{ post.id }}">{{ post.body }}</span>
                 {% if post.language and post.language != g.locale %}
                 <br><br>

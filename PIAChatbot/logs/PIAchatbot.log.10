@@ -1,4 +1,4 @@
-2019-02-26 11:38:52,228 ERROR: Exception on /auth/reset_password_request [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-03-02 11:15:50,940 ERROR: Exception on / [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,96 +8,77 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\celia\microblog\app\auth\routes.py", line 61, in reset_password_request
-    send_password_reset_email(user)
-  File "C:\Users\celia\microblog\app\auth\email.py", line 12, in send_password_reset_email
-    user=user, token=token),
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\loaders.py", line 113, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\templating.py", line 58, in get_source
-    return self._get_source_fast(environment, template)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\templating.py", line 83, in _get_source_fast
-    return loader.get_source(environment, template)
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\loaders.py", line 175, in get_source
-    contents = f.read().decode(self.encoding)
-UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe9 in position 43: invalid continuation byte
-2019-02-26 11:40:34,257 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 11:43:54,480 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 11:45:30,976 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 11:46:04,578 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 11:46:54,200 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 11:47:35,117 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 11:48:46,770 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 11:49:36,864 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 11:56:24,209 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 11:56:54,186 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 11:58:08,199 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 11:59:02,655 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 11:59:55,250 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 12:01:30,789 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 12:02:00,110 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 12:02:43,043 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 12:05:15,980 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 12:05:51,484 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 12:06:55,006 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 12:07:35,309 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 17:08:09,560 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 17:08:57,278 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 17:09:40,619 ERROR: Exception on /translate [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\Users\celia\PIAChatbot\app\main\routes.py", line 17, in before_request
+    if current_user.is_authenticated:
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "C:\Users\celia\PIAChatbot\app\models.py", line 83, in load_user
+    return User.query.get(int(id))
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 936, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 282, in load_on_pk_identity
+    return q.one()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3039, in one
+    ret = self.one_or_none()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3008, in one_or_none
+    ret = list(self)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3081, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3103, in _execute_and_instances
+    querycontext, self._connection_from_session, close_with_result=True
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3111, in _get_bind_args
+    mapper=self._bind_mapper(), clause=querycontext.statement, **kw
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3096, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1120, in connection
+    execution_options=execution_options,
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1126, in _connection_for_bind
+    engine, execution_options
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 424, in _connection_for_bind
+    conn = bind.contextual_connect()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2192, in contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2228, in _wrap_pool_connect
+    return fn()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 425, in connect
+    return _ConnectionFairy._checkout(self)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 822, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 554, in checkout
+    rec = pool._do_get()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 1250, in _do_get
+    self._dec_overflow()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 67, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 277, in reraise
     raise value
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\celia\microblog\app\main\routes.py", line 133, in translate_text
-    request.form['dest_language'])})
-  File "C:\Users\celia\microblog\app\translate.py", line 19, in translate
-    return json.loads(r.content.decode('latin1-sig'))
-LookupError: unknown encoding: latin1-sig
-2019-02-26 17:10:14,062 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 17:18:40,000 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 17:20:32,795 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 17:26:24,870 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 17:28:44,203 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
-2019-02-26 17:28:46,117 ERROR: Exception on /index [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\celia\microblog\app\main\routes.py", line 44, in index
-    flash(_(post.items))
-UnboundLocalError: local variable 'post' referenced before assignment
-2019-02-26 17:29:54,801 INFO: PIA Chatbot startup [in C:\Users\celia\microblog\app\__init__.py:74]
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 1247, in _do_get
+    return self._create_connection()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 370, in _create_connection
+    return _ConnectionRecord(self)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 499, in __init__
+    self.__connect(first_connect_check=True)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 713, in __connect
+    pool.dispatch.connect(self.connection, self)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 259, in __call__
+    fn(*args, **kw)
+  File "c:\users\celia\microblog\venv\lib\site-packages\chatterbot\storage\sql_storage.py", line 43, in set_sqlite_pragma
+    dbapi_connection.execute('PRAGMA journal_mode=WAL')
+AttributeError: 'Connection' object has no attribute 'execute'
+2019-03-03 11:48:39,740 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]

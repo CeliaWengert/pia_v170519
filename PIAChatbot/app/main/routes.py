@@ -1,6 +1,5 @@
 from datetime import datetime
-from flask import render_template, flash, redirect, url_for, request, g, \
-    jsonify, current_app
+from flask import render_template, flash, redirect, url_for, request, g, jsonify, current_app
 from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from guess_language import guess_language
@@ -11,6 +10,7 @@ from app.translate import translate
 from app.main import bp
 from sqlalchemy import MetaData
 import mysql.connector
+from app.main import bot
 
 @bp.before_app_request
 def before_request():
@@ -63,7 +63,6 @@ def explore():
                            posts=posts.items, next_url=next_url,
                            prev_url=prev_url)
 
-
 @bp.route('/user/<username>')
 @login_required
 def user(username):
@@ -95,7 +94,6 @@ def edit_profile():
     return render_template('edit_profile.html', title=_('Editer le profil'),
                            form=form)
 
-
 @bp.route('/follow/<username>')
 @login_required
 def follow(username):
@@ -110,7 +108,6 @@ def follow(username):
     db.session.commit()
     flash(_('Tu follow %(username)s !', username=username))
     return redirect(url_for('main.user', username=username))
-
 
 @bp.route('/unfollow/<username>')
 @login_required
@@ -143,3 +140,12 @@ def translate_text():
     return jsonify({'text': translate(request.form['text'],
                                       request.form['source_language'],
                                       request.form['dest_language'])})
+									  							 
+@bp.route("/chatbot")
+def chatbot():
+    return render_template("index_pia.html")
+
+@bp.route("/getchatbot")
+def get_bot_response():
+    userText = request.args.get('msg')
+    return str(bot.get_response(userText))

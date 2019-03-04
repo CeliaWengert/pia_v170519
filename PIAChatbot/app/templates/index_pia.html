@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+	<!DOCTYPE html>
+	<html>
+	  <head>
+		<link rel="stylesheet" href="/static/style28.css" type="text/css" media="screen"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  </head>
+	  <body>
+		  <div class="corps">
+			<div class="image"><img src="./static/PIA2.gif"></div>
+			<div>
+			  <div id="chatbox">
+					<p class="botText">
+						<span>Hello, my name is PIA. :)</span>
+					</p>
+			  </div>
+			  <div id="userInput">
+				<input id="textInput" type="text" name="msg" placeholder="Message">
+				<input id="buttonInput" type="submit" value="Envoyer">
+			  </div>
+			  <script>
+				function getBotResponse() {
+				  var rawText = $("#textInput").val();
+				  var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+				  $("#textInput").val("");
+				  $("#chatbox").append(userHtml);
+				  document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+				  $.get("/getchatbot", { msg: rawText }).done(function(data) {
+					var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+					$("#chatbox").append(botHtml);
+					document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+				  });
+				}
+				$("#textInput").keypress(function(e) {
+					if(e.which == 13) {
+						getBotResponse();
+					}
+				});
+				$("#buttonInput").click(function() {
+				  getBotResponse();
+				})
+			  </script>
+			</div>
+		</div>
+	  </body>
+	</html>
+
+{% endblock %}

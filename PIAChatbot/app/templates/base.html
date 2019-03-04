@@ -1,7 +1,7 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-    {% if title %}{{ title }} - PIAChatbot{% else %}{{ _('Welcome to PIA Chatbot') }}{% endif %}
+    {% if title %}{{ title }} - PIAChatbot{% else %}{{ _('Profil PIA Chatbot') }}{% endif %}
 {% endblock %}
 
 {% block navbar %}
@@ -19,7 +19,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url_for('main.index') }}">{{ _('Accueil') }}</a></li>
-                    <li><a href="{{ url_for('main.explore') }}">{{ _('Exploration') }}</a></li>
+                    <li><a href="{{ url_for('main.explore') }}">{{ _('Actualités') }}</a></li>
+					<li><a href="{{ url_for('main.chatbot') }}">{{ _('Chatbot') }}</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_anonymous %}

@@ -1,40 +1,18 @@
-2019-02-27 13:22:43,591 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:22:47,758 ERROR: Exception on /results [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-03-04 20:26:18,844 ERROR: Exception on /getchatbot [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
-  File "c:\users\celia\microblog\venv\lib\site-packages\mysql\connector\connection_cext.py", line 395, in cmd_query
-    raw_as_string=raw_as_string)
-_mysql_connector.MySQLInterfaceError: No tables used
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1236, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (2013, 'Lost connection to MySQL server during query')
 
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\celia\microblog - Copie\app\main\routes.py", line 135, in results
-    cursor.execute("SELECT *;")
-  File "c:\users\celia\microblog\venv\lib\site-packages\mysql\connector\cursor_cext.py", line 266, in execute
-    raw_as_string=self._raw_as_string)
-  File "c:\users\celia\microblog\venv\lib\site-packages\mysql\connector\connection_cext.py", line 398, in cmd_query
-    sqlstate=exc.sqlstate)
-mysql.connector.errors.DatabaseError: 1096 (HY000): No tables used
-2019-02-27 13:23:26,392 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:23:31,268 ERROR: Exception on /results [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\celia\microblog\venv\lib\site-packages\mysql\connector\connection_cext.py", line 395, in cmd_query
-    raw_as_string=raw_as_string)
-_mysql_connector.MySQLInterfaceError: Table 'pia.tables' doesn't exist
-
-During handling of the above exception, another exception occurred:
+The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
   File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
@@ -45,73 +23,62 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\celia\microblog - Copie\app\main\routes.py", line 135, in results
-    cursor.execute("SELECT * from tables;")
-  File "c:\users\celia\microblog\venv\lib\site-packages\mysql\connector\cursor_cext.py", line 266, in execute
-    raw_as_string=self._raw_as_string)
-  File "c:\users\celia\microblog\venv\lib\site-packages\mysql\connector\connection_cext.py", line 398, in cmd_query
-    sqlstate=exc.sqlstate)
-mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'pia.tables' doesn't exist
-2019-02-27 13:23:57,544 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:27:30,391 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:27:33,369 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:27:40,951 ERROR: Exception on /results [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\celia\microblog\venv\lib\site-packages\mysql\connector\connection_cext.py", line 395, in cmd_query
-    raw_as_string=raw_as_string)
-_mysql_connector.MySQLInterfaceError: Table 'pia.tables' doesn't exist
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\celia\microblog - Copie\app\main\routes.py", line 135, in results
-    cursor.execute("SELECT * from tables;")
-  File "c:\users\celia\microblog\venv\lib\site-packages\mysql\connector\cursor_cext.py", line 266, in execute
-    raw_as_string=self._raw_as_string)
-  File "c:\users\celia\microblog\venv\lib\site-packages\mysql\connector\connection_cext.py", line 398, in cmd_query
-    sqlstate=exc.sqlstate)
-mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'pia.tables' doesn't exist
-2019-02-27 13:28:38,168 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:28:43,102 ERROR: Exception on /results [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\celia\microblog - Copie\app\main\routes.py", line 137, in results
-    return render_template('results.html',value=result)#value=db.metadata.sorted_tables)
-NameError: name 'result' is not defined
-2019-02-27 13:29:07,578 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:31:52,355 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:34:00,625 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:34:02,204 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:34:04,637 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:34:32,395 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:35:33,817 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:38:56,500 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:41:28,298 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
-2019-02-27 13:41:49,712 INFO: PIA Chatbot startup [in C:\Users\celia\microblog - Copie\app\__init__.py:74]
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\Users\celia\PIAChatbot\app\main\routes.py", line 17, in before_request
+    if current_user.is_authenticated:
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "C:\Users\celia\PIAChatbot\app\models.py", line 83, in load_user
+    return User.query.get(int(id))
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 936, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 282, in load_on_pk_identity
+    return q.one()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3039, in one
+    ret = self.one_or_none()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3008, in one_or_none
+    ret = list(self)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3081, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3106, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 980, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 273, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1099, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1240, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1458, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 296, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 276, in reraise
+    raise value.with_traceback(tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1236, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
+    db.query(q)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\connections.py", line 224, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.id = %s'] [parameters: (2,)] (Background on this error at: http://sqlalche.me/e/e3q8)

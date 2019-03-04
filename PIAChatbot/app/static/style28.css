@@ -1,0 +1,80 @@
+body {
+    /* font-family: Garamond; */
+}
+
+.corps{
+	display:flex;
+}
+
+.image{
+	margin-top:auto;
+	padding-top:60px;
+	
+}
+
+#chatbox {
+    margin-left: 60px;
+    margin-right: 60px;
+    width: 170%;
+    margin-top: 60px;
+}
+
+#userInput {
+    margin-left: 60px;
+    margin-right: 60px;
+    width: 170%;
+    margin-top: 60px;
+}
+
+#textInput {
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid #009688;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+#buttonInput {
+    padding: 3px;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.userText {
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: right;
+    line-height: 30px;
+	margin-top:20px;
+}
+
+.userText span {
+    background-color: rgb(0,113,113);
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.botText {
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+	margin-top:20px;
+}
+
+.botText span {
+    background-color: rgb(255,128,64);
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+#tidbit {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width: 300px;
+}
