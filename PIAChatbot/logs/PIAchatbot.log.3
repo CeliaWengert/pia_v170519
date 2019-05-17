@@ -1,4 +1,35 @@
-2019-03-03 15:57:24,841 ERROR: Exception on / [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-05-17 20:08:00,261 ERROR: Exception on /historique [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2228, in _wrap_pool_connect
+    return fn()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 425, in connect
+    return _ConnectionFairy._checkout(self)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 822, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 559, in checkout
+    rec._checkin_failed(err)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 67, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 277, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 556, in checkout
+    dbapi_connection = rec.get_connection()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 683, in get_connection
+    self.__connect()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 701, in __connect
+    connection = pool._invoke_creator(self)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 437, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2002, "Can't connect to MySQL server on '130.79.207.104' (10060)")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,49 +39,84 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\celia\PIAChatbot\app\main\routes.py", line 50, in index
-    prev_url=prev_url)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\Users\celia\PIAChatbot\app\main\routes.py", line 22, in before_request
+    if current_user.is_authenticated:
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "C:\Users\celia\PIAChatbot\app\models.py", line 84, in load_user
+    return User.query.get(int(id))
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 936, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 282, in load_on_pk_identity
+    return q.one()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3039, in one
+    ret = self.one_or_none()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3008, in one_or_none
+    ret = list(self)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3081, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3103, in _execute_and_instances
+    querycontext, self._connection_from_session, close_with_result=True
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3111, in _get_bind_args
+    mapper=self._bind_mapper(), clause=querycontext.statement, **kw
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3096, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1120, in connection
+    execution_options=execution_options,
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1126, in _connection_for_bind
+    engine, execution_options
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 424, in _connection_for_bind
+    conn = bind.contextual_connect()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2192, in contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2232, in _wrap_pool_connect
+    e, dialect, self
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1528, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 296, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 276, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\celia\PIAChatbot\app\templates\index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\celia\PIAChatbot\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 21, in block "body"
-    {% block navbar %}
-  File "C:\Users\celia\PIAChatbot\app\templates\base.html", line 23, in block "navbar"
-    <li><a href="{{ url_for('main.chatbot') }}">{{ _('Chatbot') }}</a></li>
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\helpers.py", line 356, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2228, in _wrap_pool_connect
+    return fn()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 425, in connect
+    return _ConnectionFairy._checkout(self)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 822, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 559, in checkout
+    rec._checkin_failed(err)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 67, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 277, in reraise
     raise value
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\helpers.py", line 345, in url_for
-    force_external=external)
-  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'main.chatbot'. Did you mean 'main.home' instead?
-2019-03-03 15:59:42,862 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 556, in checkout
+    dbapi_connection = rec.get_connection()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 683, in get_connection
+    self.__connect()
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 701, in __connect
+    connection = pool._invoke_creator(self)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 437, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\__init__.py", line 84, in Connect
+    return Connection(*args, **kwargs)
+  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\connections.py", line 164, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (2002, "Can't connect to MySQL server on '130.79.207.104' (10060)") (Background on this error at: http://sqlalche.me/e/e3q8)

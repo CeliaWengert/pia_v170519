@@ -14,7 +14,7 @@
 			<div>
 			  <div id="chatbox">
 					<p class="botText">
-						<span>Hello, my name is PIA. :)</span>
+						<span>Bonjour, je suis PIA. :)</span>
 					</p>
 			  </div>
 			  <div id="userInput">
@@ -32,8 +32,7 @@
 					var botHtml = '<p class="botText"><span>' + data + '</span></p>';
 					$("#chatbox").append(botHtml);
 					document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-				  });
-				}
+				  });}				
 				$("#textInput").keypress(function(e) {
 					if(e.which == 13) {
 						getBotResponse();

@@ -21,6 +21,7 @@
                     <li><a href="{{ url_for('main.index') }}">{{ _('Accueil') }}</a></li>
                     <li><a href="{{ url_for('main.explore') }}">{{ _('Actualités') }}</a></li>
 					<li><a href="{{ url_for('main.chatbot') }}">{{ _('Chatbot') }}</a></li>
+					<li><a href="{{ url_for('main.historique') }}">{{ _('Historique') }}</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_anonymous %}

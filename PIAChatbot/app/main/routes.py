@@ -11,6 +11,11 @@ from app.main import bp
 from sqlalchemy import MetaData
 import mysql.connector
 from app.main import bot
+from app.auth.historique_conversation import HistoriqueConversation
+from app.main.natural_langage import NLU
+from app.main.historique import Historique
+from app.main.connection_base import ConnectionBase
+from app.main.randomQuestion import Random_Question
 
 @bp.before_app_request
 def before_request():
@@ -62,6 +67,43 @@ def explore():
     return render_template('index.html', title=_('Explore'),
                            posts=posts.items, next_url=next_url,
                            prev_url=prev_url)
+						   
+@bp.route('/historique')
+@login_required
+def historique():
+
+    config = {'user': 'Hugo','password': 'PIAisBetter1996=)','host': '130.79.207.104','database':'pia',}
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+	
+    result=Historique(cursor,int(current_user.id)).getHistorique()
+	
+    cursor.close()
+    cnx.close()
+	
+    if request.form['submit_button'] == 'Supprimer prénom':
+        pass # do something else
+    elif request.form['submit_button'] == 'Supprimer nom':
+        pass # do something else
+    elif request.form['submit_button'] == 'Supprimer âge':
+        pass # do something else
+    elif request.form['submit_button'] == 'Supprimer sexe':
+        pass # do something else
+    elif request.form['submit_button'] == 'Supprimer profession':
+        pass # do something else
+    elif request.form['submit_button'] == 'Supprimer taille':
+        pass # do something else
+    elif request.form['submit_button'] == 'Supprimer poids':
+        pass # do something else
+    elif request.form['submit_button'] == 'Supprimer couleur des cheveux':
+        pass # do something else
+    elif request.form['submit_button'] == 'Supprimer couleur des yeux':
+        pass # do something else
+    else:
+        pass # unknown
+    return render_template('historique.html',value=result)
+
+
 
 @bp.route('/user/<username>')
 @login_required
@@ -142,10 +184,25 @@ def translate_text():
                                       request.form['dest_language'])})
 									  							 
 @bp.route("/chatbot")
+@login_required
 def chatbot():
     return render_template("index_pia.html")
 
 @bp.route("/getchatbot")
 def get_bot_response():
     userText = request.args.get('msg')
-    return str(bot.get_response(userText))
+    botText=bot.get_response(userText)
+    userID = int(current_user.id)
+	
+    config = {'user': 'Hugo','password': 'PIAisBetter1996=)','host': '130.79.207.104','database':'pia',}
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+	
+    HistoriqueConversation(cnx,cursor,userID,str(userText),0).insertConv()
+    HistoriqueConversation(cnx,cursor,userID,str(botText),1).insertConv()
+    NLU(cnx,cursor,userID,str(userText)).runNLU()
+    Random_Question(cursor,userID).createQuestion()
+	
+    cursor.close()
+    cnx.close()
+    return str(botText)

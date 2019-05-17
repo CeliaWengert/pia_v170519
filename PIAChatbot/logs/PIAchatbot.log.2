@@ -1,91 +1,4 @@
-2019-03-03 16:10:19,381 ERROR: Exception on /getchatbot [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1236, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
-    cursor.execute(statement, parameters)
-  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
-    res = self._query(query)
-  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
-    db.query(q)
-  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\connections.py", line 224, in query
-    _mysql.connection.query(self, query)
-MySQLdb._exceptions.OperationalError: (2006, 'MySQL server has gone away')
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\celia\PIAChatbot\app\main\routes.py", line 17, in before_request
-    if current_user.is_authenticated:
-  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
-    return self.__local()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
-    current_app.login_manager._load_user()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
-    return self.reload_user()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
-    user = self.user_callback(user_id)
-  File "C:\Users\celia\PIAChatbot\app\models.py", line 83, in load_user
-    return User.query.get(int(id))
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 936, in get
-    return self._get_impl(ident, loading.load_on_pk_identity)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
-    return db_load_fn(self, primary_key_identity)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 282, in load_on_pk_identity
-    return q.one()
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3039, in one
-    ret = self.one_or_none()
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3008, in one_or_none
-    ret = list(self)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3081, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3106, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 980, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 273, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1099, in _execute_clauseelement
-    distilled_params,
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1240, in _execute_context
-    e, statement, parameters, cursor, context
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1458, in _handle_dbapi_exception
-    util.raise_from_cause(sqlalchemy_exception, exc_info)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 296, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 276, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1236, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
-    cursor.execute(statement, parameters)
-  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
-    res = self._query(query)
-  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
-    db.query(q)
-  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\connections.py", line 224, in query
-    _mysql.connection.query(self, query)
-sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (2006, 'MySQL server has gone away') [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.id = %s'] [parameters: (2,)] (Background on this error at: http://sqlalche.me/e/e3q8)
-2019-03-03 16:14:30,277 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 16:21:21,813 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 16:25:03,623 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 16:25:17,763 ERROR: Exception on /chatbot [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+2019-05-17 20:08:41,638 ERROR: Exception on /historique [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -99,37 +12,126 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\celia\PIAChatbot\app\main\routes.py", line 146, in chatbot
-    return render_template("index_pia.html")
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\celia\PIAChatbot\app\main\routes.py", line 74, in historique
+    result=Historique(int(current_user.id)).getHistorique()
+TypeError: __init__() missing 1 required positional argument: 'login'
+2019-05-17 20:18:27,833 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 20:19:13,355 ERROR: Exception on /auth/login [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\celia\PIAChatbot\app\templates\index_pia.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\celia\PIAChatbot\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\celia\PIAChatbot\app\templates\base.html", line 49, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\celia\PIAChatbot\app\templates\index_pia.html", line 20, in block "app_content"
-    <i>{{ _('%(username)s, %(when)s',username=user_link, when=moment(post.timestamp).fromNow())}} :</i>
-  File "c:\users\celia\microblog\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'post' is undefined
-2019-03-03 16:27:44,959 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\PIAChatbot\app\auth\routes.py", line 25, in login
+    open_conv=HistoriqueOuvertureConversation(form.username.data)
+TypeError: __init__() missing 2 required positional arguments: 'cursor' and 'login'
+2019-05-17 20:37:36,260 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 20:38:24,099 ERROR: Exception on /auth/login [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\PIAChatbot\app\auth\routes.py", line 25, in login
+    open_conv=HistoriqueOuvertureConversation(current_user.id)
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'id'
+2019-05-17 20:40:59,344 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 20:41:19,936 ERROR: Exception on /auth/login [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\PIAChatbot\app\auth\routes.py", line 25, in login
+    open_conv=HistoriqueOuvertureConversation(current_user.id)
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'id'
+2019-05-17 20:42:51,144 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 20:43:00,742 ERROR: Exception on /auth/login [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\PIAChatbot\app\auth\routes.py", line 25, in login
+    open_conv=HistoriqueOuvertureConversation(current_user.id)
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'id'
+2019-05-17 20:43:54,108 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 20:44:07,154 ERROR: Exception on /auth/login [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\PIAChatbot\app\auth\routes.py", line 25, in login
+    open_conv=HistoriqueOuvertureConversation(current_user.id)
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'id'
+2019-05-17 20:45:11,266 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 20:45:20,089 ERROR: Exception on /auth/login [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\PIAChatbot\app\auth\routes.py", line 25, in login
+    open_conv=HistoriqueOuvertureConversation(int(current_user.id))
+  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'id'

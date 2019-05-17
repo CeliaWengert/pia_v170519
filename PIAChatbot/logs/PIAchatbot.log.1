@@ -1,35 +1,5 @@
-2019-03-03 16:32:21,708 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 16:37:17,694 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 16:38:54,123 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 16:43:21,847 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 16:45:52,368 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 16:54:43,978 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 17:04:51,688 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 17:14:44,573 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 18:14:49,872 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 18:20:04,799 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 18:33:23,595 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 18:34:12,859 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 18:34:48,604 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 18:39:59,154 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 18:45:50,937 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 18:49:42,450 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 18:50:20,777 ERROR: Exception on /getchatbot [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1236, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
-    cursor.execute(statement, parameters)
-  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
-    res = self._query(query)
-  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
-    db.query(q)
-  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\connections.py", line 224, in query
-    _mysql.connection.query(self, query)
-MySQLdb._exceptions.OperationalError: (2013, 'Lost connection to MySQL server during query')
-
-The above exception was the direct cause of the following exception:
-
+2019-05-17 20:49:36,752 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 20:49:47,725 ERROR: Exception on /auth/login [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -39,66 +9,116 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\celia\PIAChatbot\app\main\routes.py", line 17, in before_request
-    if current_user.is_authenticated:
-  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "c:\users\celia\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
-    return self.__local()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
-    current_app.login_manager._load_user()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
-    return self.reload_user()
-  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
-    user = self.user_callback(user_id)
-  File "C:\Users\celia\PIAChatbot\app\models.py", line 83, in load_user
-    return User.query.get(int(id))
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 936, in get
-    return self._get_impl(ident, loading.load_on_pk_identity)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
-    return db_load_fn(self, primary_key_identity)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 282, in load_on_pk_identity
-    return q.one()
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3039, in one
-    ret = self.one_or_none()
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3008, in one_or_none
-    ret = list(self)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3081, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3106, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 980, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 273, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1099, in _execute_clauseelement
-    distilled_params,
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1240, in _execute_context
-    e, statement, parameters, cursor, context
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1458, in _handle_dbapi_exception
-    util.raise_from_cause(sqlalchemy_exception, exc_info)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 296, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 276, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1236, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\users\celia\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
-    cursor.execute(statement, parameters)
-  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
-    res = self._query(query)
-  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\cursors.py", line 312, in _query
-    db.query(q)
-  File "c:\users\celia\microblog\venv\lib\site-packages\MySQLdb\connections.py", line 224, in query
-    _mysql.connection.query(self, query)
-sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.id = %s'] [parameters: (2,)] (Background on this error at: http://sqlalche.me/e/e3q8)
-2019-03-03 18:52:20,442 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 18:55:20,022 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 18:56:59,398 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
-2019-03-03 18:58:37,594 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\PIAChatbot\app\auth\routes.py", line 25, in login
+    open_conv=HistoriqueOuvertureConversation(username=form.username.data)
+TypeError: __init__() got an unexpected keyword argument 'username'
+2019-05-17 20:50:45,123 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 20:51:13,096 ERROR: Exception on /auth/login [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\PIAChatbot\app\auth\routes.py", line 25, in login
+    open_conv=HistoriqueOuvertureConversation(username)
+  File "C:\Users\celia\PIAChatbot\app\auth\historique_ouverture_conversation.py", line 8, in __init__
+    self.cursor = cnx.cursor()
+NameError: name 'cnx' is not defined
+2019-05-17 20:52:05,686 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 20:52:15,937 ERROR: Exception on /auth/login [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\PIAChatbot\app\auth\routes.py", line 26, in login
+    open_conv.createNewConversation()
+  File "C:\Users\celia\PIAChatbot\app\auth\historique_ouverture_conversation.py", line 27, in createNewConversation
+    requete2="INSERT INTO HistoriqueOuvertureConversation (hoc_user_id,hoc_DateConnexion) VALUES ({1}, now())".format(self.nextIDConv,self.getIDUser())
+TypeError: getIDUser() takes 0 positional arguments but 1 was given
+2019-05-17 20:53:01,122 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 20:59:35,517 ERROR: Exception on /auth/login [POST] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\celia\PIAChatbot\app\auth\routes.py", line 26, in login
+    open_conv.createNewConversation()
+  File "C:\Users\celia\PIAChatbot\app\auth\historique_ouverture_conversation.py", line 27, in createNewConversation
+    requete2="INSERT INTO HistoriqueOuvertureConversation (hoc_user_id,hoc_DateConnexion) VALUES ({1}, now())".format(self.nextIDConv,self.getIDUser())
+  File "C:\Users\celia\PIAChatbot\app\auth\historique_ouverture_conversation.py", line 14, in getIDUser
+    cursor.execute(requete)
+NameError: name 'cursor' is not defined
+2019-05-17 21:00:46,112 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 21:02:19,875 ERROR: Exception on /historique [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\celia\PIAChatbot\app\main\routes.py", line 79, in historique
+    result=Historique(int(current_user.id)).getHistorique()
+  File "C:\Users\celia\PIAChatbot\app\main\historique.py", line 10, in getHistorique
+    self.cursor.callproc('sp_getHistorique',args)
+AttributeError: 'Historique' object has no attribute 'cursor'
+2019-05-17 21:04:56,917 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 21:05:08,998 ERROR: Exception on /historique [GET] [in c:\users\celia\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\celia\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\celia\PIAChatbot\app\main\routes.py", line 79, in historique
+    result=Historique(int(current_user.id)).getHistorique()
+TypeError: __init__() missing 1 required positional argument: 'login'
+2019-05-17 21:05:41,583 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
+2019-05-17 21:15:26,518 INFO: PIA Chatbot startup [in C:\Users\celia\PIAChatbot\app\__init__.py:73]
